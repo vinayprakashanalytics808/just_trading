@@ -19,5 +19,57 @@
       flex-basis: 100%;          /* Target width for slider */
       font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     }
-    
-    
+
+  
+span.a {
+  display: inline; 
+  width: 100px;
+  height: 100px;
+  padding: 5px; 
+  background-color: cadetblue; 
+  color:aliceblue;
+  border-radius:8px;
+}  
+
+span.b {
+  display: inline; 
+  width: 100px;
+  height: 100px;
+  padding: 5px; 
+  background-color: lightgreen; 
+  color:black;
+  border-radius:8px;
+}  
+
+span.c {
+  display: inline; 
+  width: 100px;
+  height: 100px;
+  padding: 5px; 
+  background-color: palevioletred; 
+  color:black;
+  border-radius:8px;
+}  
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+body, .rt {
+    background-color: antiquewhite;
+}
