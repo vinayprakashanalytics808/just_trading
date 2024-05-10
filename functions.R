@@ -1,7 +1,7 @@
-nullToNA <- function(x) {
-x[sapply(x, is.null)] <- NA
-return(x)
-}
+# nullToNA <- function(x) {
+# x[sapply(x, is.null)] <- NA
+# return(x)
+# }
 
 
 ## Round of 2
@@ -75,10 +75,10 @@ profit_function_plot <- function(dataframe_to_call, category, open_price, number
        ind = number_of_days:98
        category <- enquo(category)
        open_price <- enquo(open_price)
-       varname <- paste("profit for ", profit, " in ", format(number_of_days, scientific = FALSE), " days", sep = "")
+       varname <- paste("profit/share for ", profit, " in ", format(number_of_days, scientific = FALSE), " days", sep = "")
        new_data <- dataframe_to_call %>% group_by({{category}}) %>% mutate({{varname}} := (profit * (close - c({{open_price}}[head(ind+1, n())], rep(NA, max(0, n() - length(ind)-1))))) / c({{open_price}}[head(ind+1, n())], rep(NA, max(0, n() - length(ind)-1))))
        new_data <- new_data[complete.cases(new_data),]
        new_data$date <- as.Date(new_data$date)
-       return(ggplotly(new_data %>% ggplot(aes(x=date,y=!!sym(names(.)[15])))+geom_hline(aes(yintercept=profit), linetype='dashed')+geom_line(aes(color=symbol))+theme(panel.background = element_rect(fill = back_ground),plot.background = element_rect(fill = back_ground),legend.background = element_rect(fill = back_ground))+ ggtitle(colnames(new_data)[15]) + theme(plot.title = element_text(color="black", size=12, face="bold.italic",hjust = 0.5), axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank(),axis.title.y=element_blank(),axis.text.y=element_blank(),axis.ticks.y=element_blank())))
+       return(ggplotly(new_data %>% ggplot(aes(x=date,y=!!sym(names(.)[16])))+geom_hline(aes(yintercept=profit), linetype='dashed')+geom_line(aes(color=symbol))+theme(panel.background = element_rect(fill = back_ground),plot.background = element_rect(fill = back_ground),legend.background = element_rect(fill = back_ground))+ ggtitle(colnames(new_data)[16]) + theme(plot.title = element_text(color="black", size=12, face="bold.italic",hjust = 0.5), axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank(),axis.title.y=element_blank(),axis.text.y=element_blank(),axis.ticks.y=element_blank())))
    }
 

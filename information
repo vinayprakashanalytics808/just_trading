@@ -1,7 +1,8 @@
 run below stored Proc 'sp_APIList' in SSMS to update the new API
 
-exec sp_APIList 'to get latest day prices', 'Multiple companies can be passed', 'Previous Day', 'https://fmpcloud.io/api/v3/quote/companies_to_be_passed?apikey=', 'd044d11c5bbbc7c89697083850466e50'
+exec sp_APIList 'To get latest day prices', 'Multiple companies can be passed', 'Previous Day', 'https://fmpcloud.io/api/v3/quote/companies_to_be_passed?apikey=', '9021664c6f29c04aa567b7e637a3c70c', 499
 
 
 1. Get all companies details (first tab)
 
+9021664c6f29c04aa567b7e637a3c70c
